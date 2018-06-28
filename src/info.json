@@ -1,0 +1,11 @@
+{
+    "name": "Landmarks",
+    "version": "0.1.0",
+    "title": "Landmarks",
+    "author": "Tarrke",
+    "contact": "https://github.com/Tarrke",
+    "homepage": "https://github.com/Tarrke/factorio-landmarks",
+    "factorio_version": "0.16",
+    "dependencies": ["base >= 0.16"],
+    "description": "This mod adds landmarks which can be constructed for glory only."
+}
