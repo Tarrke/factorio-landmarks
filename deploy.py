@@ -33,12 +33,16 @@ else:
     print ("Directory " + directory + " already exists. Aborting...")
     sys.exit(-2)
 
+os.chdir('src')
+print(os.getcwd())
 for file in glob.glob('**/*.lua', recursive=True):
     print ("Copying " + file + "...")
     sub_dirs = os.path.split(file)[0]
+    print(sub_dirs)
     if len(sub_dirs) > 0:
-        os.makedirs(directory + os.sep + sub_dirs, exist_ok=True)
-    shutil.copy(file, directory + os.sep + file)
+        os.makedirs('..' + os.sep + directory + os.sep + sub_dirs, exist_ok=True)
+    shutil.copy(file, '..' + os.sep + directory + os.sep + file)
+os.chdir('..')
 
 print ("Copying locales")
 shutil.copytree("locale", directory + "/locale")
