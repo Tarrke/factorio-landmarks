@@ -1,4 +1,4 @@
-#! python
+#!/usr/bin/env python3
 
 """ Factorio mod deploy script """
 
@@ -11,11 +11,12 @@ import json
 
 ## Configuration Section
 mod_name = "Landmarks"
+deploy_mod = True
 
 ##Get version from info.json
 version = ""
 
-with open("src/info.json") as info:
+with open("info.json") as info:
     version = json.load(info)["version"]
     print ("Found version " + version + ".")
 
@@ -32,17 +33,21 @@ else:
     print ("Directory " + directory + " already exists. Aborting...")
     sys.exit(-2)
 
-for file in glob.glob(r'src/*.lua'):
+for file in glob.glob('**/*.lua', recursive=True):
     print ("Copying " + file + "...")
-    shutil.copy(file, directory)
+    sub_dirs = os.path.split(file)[0]
+    if len(sub_dirs) > 0:
+        os.makedirs(directory + os.sep + sub_dirs, exist_ok=True)
+    shutil.copy(file, directory + os.sep + file)
 
 print ("Copying locales")
-shutil.copytree("src/locale", directory + "/locale")
+shutil.copytree("locale", directory + "/locale")
 
 print ("Copying info.json")
-shutil.copy("src/info.json", directory)
+shutil.copy("info.json", directory)
 
 print ("Creating zipfile...")
+zipname = directory + '.zip'
 zipf = zipfile.ZipFile(directory + '.zip', 'w', zipfile.ZIP_DEFLATED)
 
 for root, dirs, files in os.walk(directory):
@@ -54,3 +59,9 @@ print ("Removing directory...")
 shutil.rmtree(directory)
 
 print ("Release " + version + " completed.")
+
+if deploy_mod:
+    destination = '/home/jgay/.factorio/mods/' + zipname
+    if os.path.exists(destination):
+        os.remove(destination)
+    shutil.move(zipname, destination)

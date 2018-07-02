@@ -24,10 +24,11 @@ Setting_types :
 
 data:extend({
     {
-        type = "bool-setting", 
-        name = "my-mod-test-setting",
-        setting_type = "runtime-global",
-        default_value = true,
-        order = "a-b" --order in lexicographic order
-    }
+		type = "bool-setting",
+		name = "landmarks-show-log",
+		setting_type = "runtime-per-user",
+		default_value = false,
+        per_user = true,
+        order = "a-b"
+	}
 })
