@@ -1,20 +1,20 @@
 -- item.lua
 
+local landmarksSubgroup = {}
+
+landmarksSubgroup.type = "item-subgroup"
+landmarksSubgroup.name = "landmarks-subgroup"
+landmarksSubgroup.group = "production"
+landmarksSubgroup.order = "e-a"
+
 local eiffelTower = {}
 
 eiffelTower.type = "item"
 eiffelTower.name = "eiffel-tower"
-eiffelTower.icon = "__landmarks__/graphics/icons/eiffel-tower.png"
+eiffelTower.icon = "__Landmarks__/graphics/icons/eiffel-tower.png"
+eiffelTower.icon_size = 64
 eiffelTower.flags = {"goes-to-quickbar"}
-eiffelTower.subgroup = "Landmarks"
+eiffelTower.subgroup = "landmarks-subgroup"
 eiffelTower.stack_size = 1
 
-local eiffelTowerRevipe = {}
-
-eiffelTowerRevipe.type = "recipe"
-eiffelTowerRevipe.name = "eiffel-tower-recipe"
-eiffelTowerRevipe.enabled = "true"
-eiffelTowerRevipe.ingredients = { {"iron-stick", 100} }
-eiffelTowerRevipe.result = "effeil-tower"
-
-data:extend({eiffelTower, eiffelTowerRevipe})
+data:extend({landmarksSubgroup, eiffelTower})
