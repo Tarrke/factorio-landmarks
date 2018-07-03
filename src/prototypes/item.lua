@@ -4,7 +4,7 @@ local eiffelTower = {}
 
 eiffelTower.type = "item"
 eiffelTower.name = "eiffel-tower"
-eiffelTower.icon = "__landmarks__/graphics/icons/eiffel_tower.png"
+eiffelTower.icon = "__landmarks__/graphics/icons/eiffel-tower.png"
 eiffelTower.flags = {"goes-to-quickbar"}
 eiffelTower.subgroup = "Landmarks"
 eiffelTower.stack_size = 1

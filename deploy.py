@@ -11,7 +11,7 @@ import json
 
 ## Configuration Section
 mod_name = "Landmarks"
-deploy_mod = True
+deploy_mod = False
 
 ##Get version from info.json
 version = ""
@@ -45,7 +45,10 @@ for file in glob.glob('**/*.lua', recursive=True):
 os.chdir('..')
 
 print ("Copying locales")
-shutil.copytree("locale", directory + "/locale")
+shutil.copytree("locale", directory + os.sep + "locale")
+
+print("Copying graphics")
+shutil.copytree("graphics", directory + os.sep + "graphics")
 
 print ("Copying info.json")
 shutil.copy("info.json", directory)
