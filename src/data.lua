@@ -1,5 +1,6 @@
 -- data.lua
 
-require "prototypes.entity"
+require "prototypes.groups"
 require "prototypes.item"
+require "prototypes.entity"
 require "prototypes.recipe"

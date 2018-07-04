@@ -11,7 +11,7 @@ import json
 
 ## Configuration Section
 mod_name = "Landmarks"
-deploy_mod = False
+deploy_mod = True
 
 ##Get version from info.json
 version = ""
@@ -68,7 +68,8 @@ shutil.rmtree(directory)
 print ("Release " + version + " completed.")
 
 if deploy_mod:
-    destination = '/home/jgay/.factorio/mods/' + zipname
+    destination = os.path.join(os.path.expanduser("~"), "AppData", "Roaming", "Factorio", "mods", zipname)
+    #destination = '/home/jgay/.factorio/mods/' + zipname
     if os.path.exists(destination):
         os.remove(destination)
     shutil.move(zipname, destination)
