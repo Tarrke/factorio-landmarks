@@ -10,3 +10,4 @@ function landmarks.mod_init()
         global.landmarks = {}
     end
 end
+

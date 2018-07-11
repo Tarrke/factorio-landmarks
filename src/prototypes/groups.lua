@@ -15,9 +15,9 @@ local landmarksGroup = {
     order = "a",
  }
 
- local landmarksCraftCategory = {
-    type = "recipe-category",
-    name = "landmarks-crafting-eiffel-tower",
-  }
+local landmarksCraftEiffel = {
+  type = "recipe-category",
+  name = "landmarks-crafting-eiffel-tower",
+}
 
-  data:extend({landmarksGroup, landmarksSubgroup, landmarksCraftCategory})
+  data:extend({landmarksGroup, landmarksSubgroup, landmarksCraftEiffel})

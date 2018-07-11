@@ -11,4 +11,15 @@ local eiffelTower = {
     place_result = "eiffel-tower-site"
 }
 
-data:extend({eiffelTower})
+local eiffelTowerPart = {
+    type = "item",
+    name = "eiffel-tower-part",
+    icon = "__base__/graphics/icons/rocket-part.png",
+    icon_size = 32,
+    flags = {"goes-to-main-inventory", "hidden"},
+    subgroup = "intermediate-product",
+    order = "q[eiffel-tower-part]",
+    stack_size = 5
+  }
+
+data:extend({eiffelTower, eiffelTowerPart})

@@ -29,6 +29,7 @@ local eiffelTowerSite = {
         idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
         apparent_volume = 1.5,
     },
+    fixed_recipe = "eiffel-tower-part",
     crafting_categories = {"landmarks-crafting-eiffel-tower"},
     source_inventory_size = 1,
     result_inventory_size = 1,

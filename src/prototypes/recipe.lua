@@ -10,4 +10,20 @@ local eiffelTowerRecipe = {
     --energy_required = 
 }
 
-data:extend({eiffelTowerRecipe})
+local eiffelTowerPartRecipe = {
+    type = "recipe",
+    name = "eiffel-tower-part",
+    energy_required = 3,
+    enabled = true,
+    hidden = false,
+    category = "landmarks-crafting-eiffel-tower",
+    ingredients =
+    {
+      {"steel-plate", 100},
+      {"concrete", 10},
+      {"iron-plate", 30}
+    },
+    result= "eiffel-tower-part"
+}
+
+data:extend({eiffelTowerRecipe, eiffelTowerPartRecipe})
